@@ -11,14 +11,18 @@ public class BulletBehaviour : AbstractBehaviour
     }
     public Vector3 directionVector;
 
-    private GameObject player; 
+    private bool activeCoroutine = false;
 
+    private GameObject player;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         isReflected = false;
-        player = GameObject.FindGameObjectWithTag("Player");
-        directionVector = player.transform.position - this.transform.position;
     }
 
     // Update is called once per frame
@@ -36,7 +40,20 @@ public class BulletBehaviour : AbstractBehaviour
             lookAtTarget = transform.position + directionVector;
             horizontalDirection = directionVector.x;
             forwardDirection = directionVector.z;
-
+            if (!activeCoroutine)
+            {
+                activeCoroutine = !activeCoroutine;
+                StartCoroutine("queueBullet");
+            }
+            
         }
     }
+
+    IEnumerator queueBullet()
+    {
+        yield return new WaitForSeconds(3.0f);
+        BulletFactory.instanceFactory.EnqueueBullet(gameObject);
+    }
 }
+
+
