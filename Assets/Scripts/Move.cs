@@ -5,8 +5,8 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     private AbstractBehaviour behaviour;
-    [SerializeField] private float maxSpeed;
-    private float currentSpeed;
+    [SerializeField] public float maxSpeed;
+    public float currentSpeed;
 
     private Vector3 direction;
     // Start is called before the first frame update
@@ -18,7 +18,7 @@ public class Move : MonoBehaviour
 
     private void Start()
     {
-        currentSpeed = maxSpeed;
+        SetCurrentSpeedToMaxSpeed();
         behaviour = GetComponent<AbstractBehaviour>();
     }
     // Update is called once per frame
@@ -26,5 +26,15 @@ public class Move : MonoBehaviour
     {
         ComputeDirection();
         transform.position += direction * currentSpeed * Time.deltaTime;
+    }
+
+    public void changeSpeedtoValue(float speedValue)
+    {
+        currentSpeed = speedValue;
+    }
+
+    public void SetCurrentSpeedToMaxSpeed()
+    {
+        currentSpeed = maxSpeed;
     }
 }

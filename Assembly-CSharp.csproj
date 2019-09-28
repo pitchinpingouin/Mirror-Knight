@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\AbstractBehaviour.cs" />
     <Compile Include="Assets\Scripts\BulletBehaviour.cs" />
     <Compile Include="Assets\Scripts\BulletFactory.cs" />
+    <Compile Include="Assets\Scripts\CollisionWithBullets.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
     <Compile Include="Assets\Scripts\LookAtTarget.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\MoveCameraTargetAccordingToMousePosition.cs" />
     <Compile Include="Assets\Scripts\Reflect.cs" />
+    <Compile Include="Assets\Scripts\shieldIsUp.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Reference Include="Unity.Timeline.Editor">

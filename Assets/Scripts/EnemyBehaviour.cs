@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyBehaviour : AbstractBehaviour
 {
     private float fireConditionTimer = 3.0f;
+    private Transform targetTransform;
+    private float fireDuration = 2.5f;
     public bool ShootingConditionDown
     {
         get;
@@ -16,6 +18,7 @@ public class EnemyBehaviour : AbstractBehaviour
     void Start()
     {
         ShootingConditionDown = false;
+        targetTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
@@ -24,11 +27,15 @@ public class EnemyBehaviour : AbstractBehaviour
         timer += Time.deltaTime;
         if(timer > fireConditionTimer)
         {
-            timer = 0.0f;
             ShootingConditionDown = true;
-            
+            if (timer > fireDuration + fireConditionTimer)
+            {
+                timer = 0.0f;
+                ShootingConditionDown = false;
+            }
         }
-        lookAtTarget = GameObject.FindGameObjectWithTag("Player").transform.position;
+
+        lookAtTarget = targetTransform.position;
         horizontalDirection = Mathf.Cos(Time.time);
         forwardDirection = Mathf.Sin(Time.time);
     }
