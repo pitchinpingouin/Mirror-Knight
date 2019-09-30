@@ -22,6 +22,7 @@ public class MoveCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.SmoothDamp(transform.position, cameraTargetTransform.position, ref currentVelocity, timeDurationTravelling);
+        transform.position = Vector3.SmoothDamp(transform.position, cameraTargetTransform.position, 
+            ref currentVelocity, timeDurationTravelling);
     }
 }

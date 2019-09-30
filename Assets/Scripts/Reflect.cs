@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class Reflect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Reflect triggers the IsReflected() function of the Object entering in contact with the reflector (this).
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Bullet"))
         {
-            other.GetComponent<BulletBehaviour>().isReflected = true;
-            other.GetComponent<BulletBehaviour>().directionVector = this.transform.forward;
+            other.GetComponent<BulletBehaviour>().IsReflected(this.transform.forward);
         }
     }
 }

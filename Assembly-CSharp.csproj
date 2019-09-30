@@ -68,6 +68,9 @@
     <Compile Include="Assets\Scripts\CollisionWithBullets.cs" />
     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
     <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\LifeEnemy.cs" />
+    <Compile Include="Assets\Scripts\LifeManager.cs" />
+    <Compile Include="Assets\Scripts\LifePlayer.cs" />
     <Compile Include="Assets\Scripts\LookAtTarget.cs" />
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
