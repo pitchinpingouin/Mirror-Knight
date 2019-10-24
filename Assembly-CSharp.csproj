@@ -75,8 +75,9 @@
     <Compile Include="Assets\Scripts\Move.cs" />
     <Compile Include="Assets\Scripts\MoveCamera.cs" />
     <Compile Include="Assets\Scripts\MoveCameraTargetAccordingToMousePosition.cs" />
-    <Compile Include="Assets\Scripts\Reflect.cs" />
+    <Compile Include="Assets\Scripts\RestoreHealth.cs" />
     <Compile Include="Assets\Scripts\shieldIsUp.cs" />
+    <Compile Include="Assets\Scripts\ShieldReflect.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Reference Include="Unity.Timeline.Editor">

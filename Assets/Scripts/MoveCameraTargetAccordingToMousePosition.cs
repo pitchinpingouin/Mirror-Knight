@@ -8,6 +8,7 @@ public class MoveCameraTargetAccordingToMousePosition : MonoBehaviour
     private Transform cameraTargetTransform;
     [SerializeField] private float divisionFactorToPlaceTargetBetweenPlayerAndMouse;
     [SerializeField] private float maxDistanceBetweenPlayerAndMouseToMoveTarget;
+    [SerializeField] private float minDistanceBetweenPlayerAndMouseToMoveTarget;
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +20,20 @@ public class MoveCameraTargetAccordingToMousePosition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, inputManager.lookAtTarget) <= maxDistanceBetweenPlayerAndMouseToMoveTarget)
+        
+        if (Vector3.Distance(transform.position, inputManager.lookAtTarget) < minDistanceBetweenPlayerAndMouseToMoveTarget)
         {
-            cameraTargetTransform.localPosition = new Vector3(cameraTargetTransform.localPosition.x, cameraTargetTransform.localPosition.y, Vector3.Distance(transform.position, inputManager.lookAtTarget) / divisionFactorToPlaceTargetBetweenPlayerAndMouse);
+            cameraTargetTransform.localPosition = new Vector3(cameraTargetTransform.localPosition.x, cameraTargetTransform.localPosition.y, 0);
         }
         else
+        if (Vector3.Distance(transform.position, inputManager.lookAtTarget) >= minDistanceBetweenPlayerAndMouseToMoveTarget && Vector3.Distance(transform.position, inputManager.lookAtTarget) <= maxDistanceBetweenPlayerAndMouseToMoveTarget)
         {
-            cameraTargetTransform.localPosition = new Vector3(cameraTargetTransform.localPosition.x, cameraTargetTransform.localPosition.y, maxDistanceBetweenPlayerAndMouseToMoveTarget / divisionFactorToPlaceTargetBetweenPlayerAndMouse);
+            cameraTargetTransform.localPosition = new Vector3(cameraTargetTransform.localPosition.x, cameraTargetTransform.localPosition.y, (Vector3.Distance(transform.position, inputManager.lookAtTarget) - minDistanceBetweenPlayerAndMouseToMoveTarget) / divisionFactorToPlaceTargetBetweenPlayerAndMouse);
+        }
+
+        else
+        {
+            cameraTargetTransform.localPosition = new Vector3(cameraTargetTransform.localPosition.x, cameraTargetTransform.localPosition.y, (maxDistanceBetweenPlayerAndMouseToMoveTarget - minDistanceBetweenPlayerAndMouseToMoveTarget) / divisionFactorToPlaceTargetBetweenPlayerAndMouse);
         }
     }
 }

@@ -7,6 +7,12 @@ public class InputManager : AbstractBehaviour
     [SerializeField] Camera mainCamera;
     private Ray cameraRay;
 
+    public bool escapeButtonDown
+    {
+        get;
+        private set;
+    }
+
     public bool leftClickDown
     {
         get;
@@ -51,5 +57,13 @@ public class InputManager : AbstractBehaviour
 
         leftClickDown = Input.GetButtonDown("shieldUp");
         leftClickUp = Input.GetButtonUp("shieldUp");
+        escapeButtonDown = Input.GetButtonDown("Exit");
+
+
+        //A DEPLACER, ne pas laisser ca dans inputManager
+        if (escapeButtonDown)
+        {
+            Application.Quit();
+        }
     }
 }

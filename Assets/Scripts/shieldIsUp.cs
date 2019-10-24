@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class shieldIsUp : MonoBehaviour
 {
-    [SerializeField] private float slowSpeed;
+   // [SerializeField] private float slowSpeed;
 
-    private Move moveScript;
+   // private Move moveScript;
     private GameObject shield;
     private InputManager inputManager;
 
@@ -14,7 +14,7 @@ public class shieldIsUp : MonoBehaviour
     void Start()
     {
         shield = transform.Find("shield").gameObject;
-        moveScript = GetComponent<Move>();
+       // moveScript = GetComponent<Move>();
         inputManager = GetComponent<InputManager>();
     }
 
@@ -23,13 +23,13 @@ public class shieldIsUp : MonoBehaviour
     {
         if (inputManager.leftClickDown)
         {
-            moveScript.changeSpeedtoValue(slowSpeed);
+      //      moveScript.changeSpeedtoValue(slowSpeed);
             shield.SetActive(true);
         }
 
         if (inputManager.leftClickUp)
         {
-            moveScript.SetCurrentSpeedToMaxSpeed();
+       //     moveScript.SetCurrentSpeedToMaxSpeed();
             shield.SetActive(false);
         }
     }

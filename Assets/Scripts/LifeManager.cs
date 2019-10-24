@@ -4,15 +4,22 @@ using UnityEngine;
 
 public abstract class LifeManager : MonoBehaviour
 {
-    [SerializeField] protected int maxHealth;
-    protected int currentHealth;
+    [SerializeField] public int maxHealth;
+
+    public bool isGoingToDieNextHit;
+
+    public int currentHealth
+    {
+        get;
+        protected set;
+    }
 
     virtual protected void Start()
     {
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damageOrHeal)
+    public virtual void TakeDamage(int damageOrHeal)
     {
         if(currentHealth - damageOrHeal > maxHealth)
         {
@@ -28,7 +35,7 @@ public abstract class LifeManager : MonoBehaviour
 
     }
 
-    private void Die()
+    protected void Die()
     {
         gameObject.SetActive(false);
     }

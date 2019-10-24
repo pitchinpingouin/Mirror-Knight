@@ -7,7 +7,13 @@ public class LifePlayer : LifeManager
     private float slowDamageOverTime = 1.0f;
 
     [SerializeField] private float maxRange;
+    [SerializeField] private float minRange;
     [SerializeField] private float maxIntensity;
+    [SerializeField] private float minIntensity;
+
+
+    private GameObject deathlight;
+    private GameObject torch;
 
 
     private Light flameLight;
@@ -17,6 +23,9 @@ public class LifePlayer : LifeManager
     override protected void Start()
     {
         base.Start();
+        deathlight = transform.Find("deathlight").gameObject;
+        torch = transform.Find("torch").gameObject;
+        isGoingToDieNextHit = false;
         torchGameObject = transform.Find("torch").gameObject;
         flameLight = torchGameObject.GetComponentInChildren<Light>();
         StartCoroutine("SlowlyKillTheFlame");
@@ -25,8 +34,8 @@ public class LifePlayer : LifeManager
     private void Update()
     {
         float percentage = (float)currentHealth / (float)maxHealth;
-        flameLight.range = percentage * maxRange;
-        flameLight.intensity = percentage * maxIntensity;
+        flameLight.range = percentage * maxRange + minRange;
+        flameLight.intensity = percentage * maxIntensity + minIntensity;
     }
 
 
@@ -37,5 +46,39 @@ public class LifePlayer : LifeManager
             yield return new WaitForSeconds(1);
             TakeDamage(1);
         }
+    }
+
+    public override void TakeDamage(int damageOrHeal)
+    {
+        if (isGoingToDieNextHit)
+        {
+            if (damageOrHeal > slowDamageOverTime)
+            {
+                Die();
+            }
+        }
+
+        {
+            if (currentHealth - damageOrHeal > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+
+            currentHealth -= damageOrHeal;
+
+            if (currentHealth <= 0)
+            {
+                torch.SetActive(false);
+                deathlight.SetActive(true);
+                isGoingToDieNextHit = true;
+            }
+            else
+            {
+                torch.SetActive(true);
+                deathlight.SetActive(false);
+                isGoingToDieNextHit = false;
+            }
+        }
+
     }
 }
