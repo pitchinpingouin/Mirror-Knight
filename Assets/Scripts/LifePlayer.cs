@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LifePlayer : LifeManager
 {
-    private float slowDamageOverTime = 1.0f;
+    [SerializeField] private int slowFlameDamage = 1;
+    [SerializeField] private float timeBeforeFlameDamage = 1.0f;
 
     [SerializeField] private float maxRange;
     [SerializeField] private float minRange;
@@ -23,7 +24,7 @@ public class LifePlayer : LifeManager
     override protected void Start()
     {
         base.Start();
-        deathlight = transform.Find("deathlight").gameObject;
+        deathlight = transform.Find("deathLight").gameObject;
         torch = transform.Find("torch").gameObject;
         isGoingToDieNextHit = false;
         torchGameObject = transform.Find("torch").gameObject;
@@ -43,8 +44,8 @@ public class LifePlayer : LifeManager
     {
         while(true)
         {
-            yield return new WaitForSeconds(1);
-            TakeDamage(1);
+            yield return new WaitForSeconds(timeBeforeFlameDamage);
+            TakeDamage(slowFlameDamage);
         }
     }
 
@@ -52,7 +53,7 @@ public class LifePlayer : LifeManager
     {
         if (isGoingToDieNextHit)
         {
-            if (damageOrHeal > slowDamageOverTime)
+            if (damageOrHeal > slowFlameDamage)
             {
                 Die();
             }

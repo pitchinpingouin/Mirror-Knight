@@ -60,7 +60,7 @@ public class InputManager : AbstractBehaviour
         escapeButtonDown = Input.GetButtonDown("Exit");
 
 
-        //A DEPLACER, ne pas laisser ca dans inputManager
+        //A DEPLACER, ne pas laisser ca dans inputManager.
         if (escapeButtonDown)
         {
             Application.Quit();

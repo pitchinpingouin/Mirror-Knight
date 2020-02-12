@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1129226082}
   - component: {fileID: 1129226084}
   - component: {fileID: 1129226083}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2511f06b07cb7e649900991e9952bd8c, type: 2}
+  - {fileID: 2100000, guid: adc0ac964bb5cf142be2277e4c82d5f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1138857638}
   - component: {fileID: 1138857640}
   - component: {fileID: 1138857639}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: psGameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4923,7 +4923,7 @@ GameObject:
   - component: {fileID: 6232323586522446165}
   - component: {fileID: 6232323586522446166}
   - component: {fileID: 6232323586522446167}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -4971,7 +4971,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2511f06b07cb7e649900991e9952bd8c, type: 2}
+  - {fileID: 2100000, guid: adc0ac964bb5cf142be2277e4c82d5f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5092,8 +5092,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f5514b9780613478554c809efb2733, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 7
-  currentSpeed: 0
+  maxSpeed: 8
+  slowSpeed: 0
 --- !u!114 &6232323586522446167
 MonoBehaviour:
   m_ObjectHideFlags: 0

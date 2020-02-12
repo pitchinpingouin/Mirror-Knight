@@ -7,13 +7,13 @@ public class shieldIsUp : MonoBehaviour
    // [SerializeField] private float slowSpeed;
 
    // private Move moveScript;
-    private GameObject shield;
+    private GameObject shields;
     private InputManager inputManager;
 
     // Start is called before the first frame update
     void Start()
     {
-        shield = transform.Find("shield").gameObject;
+        shields = transform.Find("shields").gameObject;
        // moveScript = GetComponent<Move>();
         inputManager = GetComponent<InputManager>();
     }
@@ -24,13 +24,13 @@ public class shieldIsUp : MonoBehaviour
         if (inputManager.leftClickDown)
         {
       //      moveScript.changeSpeedtoValue(slowSpeed);
-            shield.SetActive(true);
+            shields.SetActive(true);
         }
 
         if (inputManager.leftClickUp)
         {
        //     moveScript.SetCurrentSpeedToMaxSpeed();
-            shield.SetActive(false);
+            shields.SetActive(false);
         }
     }
 }

@@ -46,9 +46,12 @@ GameObject:
   - component: {fileID: 8556458366963854951}
   - component: {fileID: 8556458366963854944}
   - component: {fileID: 8556458366963854945}
+  - component: {fileID: 340200271}
+  - component: {fileID: 2086449491}
+  - component: {fileID: 2086449490}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2511f06b07cb7e649900991e9952bd8c, type: 2}
+  - {fileID: 2100000, guid: f59f2c9ae3f70354bb0b01d5c2eb0b72, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,7 +127,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.53
+  m_Radius: 0.61
   m_Height: 1.1
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
@@ -141,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 3
-  currentSpeed: 0
+  slowSpeed: 0
 --- !u!114 &8556458366963854951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,4 +181,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18a1119af3af4845964553e4b3a6955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.4
+  fireRate: 0.8
+--- !u!114 &340200271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8556458366963854969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f833448633069ae478e46a7916fd4e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 250
+  isGoingToDieNextHit: 0
+--- !u!54 &2086449491
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8556458366963854969}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2086449490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8556458366963854969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f833448633069ae478e46a7916fd4e67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 250
+  isGoingToDieNextHit: 0

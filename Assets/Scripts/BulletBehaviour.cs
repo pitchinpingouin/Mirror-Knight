@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BulletBehaviour : AbstractBehaviour
 {
-    private MeshRenderer renderer;
+    private MeshRenderer mRenderer;
     private Light lightComponent;
-    [SerializeField] private int damage;
+    [SerializeField] public int damage;
 
     public bool isReflected
     {
@@ -28,7 +28,7 @@ public class BulletBehaviour : AbstractBehaviour
         psGameObject = transform.Find("psGameObject").gameObject;
         ps = psGameObject.GetComponentInChildren<ParticleSystem>();
         lightComponent = GetComponent<Light>();
-        renderer = GetComponent<MeshRenderer>();
+        mRenderer = GetComponent<MeshRenderer>();
         //ps = GetComponent<ParticleSystem>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -89,15 +89,15 @@ public class BulletBehaviour : AbstractBehaviour
     void ChangeColorToBlue()
     {
         lightComponent.color = Color.blue;
-        renderer.material.SetColor("_EmissionColor", Color.blue);
-        renderer.material.color = Color.blue;
+        mRenderer.material.SetColor("_EmissionColor", Color.blue);
+        mRenderer.material.color = Color.blue;
     }
 
     void ChangeColorToRed()
     {
         lightComponent.color = Color.red;
-        renderer.material.SetColor("_EmissionColor", Color.red);
-        renderer.material.color = Color.red;
+        mRenderer.material.SetColor("_EmissionColor", Color.red);
+        mRenderer.material.color = Color.red;
     }
 
     private void BulletTooFarFromPlayer()
