@@ -318,7 +318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &684845616
 Transform:
   m_ObjectHideFlags: 0
@@ -934,6 +934,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 600502122, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658814494, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2137036020, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5001201781860535911, guid: 678154f06bbc4fb43aab72205353519f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -997,7 +1009,7 @@ PrefabInstance:
     - target: {fileID: 5001201781881274910, guid: 678154f06bbc4fb43aab72205353519f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5001201781725611065, guid: 678154f06bbc4fb43aab72205353519f,
         type: 3}
@@ -1014,10 +1026,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: deathLight
       objectReference: {fileID: 0}
-    - target: {fileID: 2137036020, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 2137036021, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -1029,10 +1037,6 @@ PrefabInstance:
     - target: {fileID: 2137036021, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.376
-      objectReference: {fileID: 0}
-    - target: {fileID: 600502122, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 600502123, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1046,13 +1050,34 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1658814494, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 1658814495, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001201781860535928, guid: 678154f06bbc4fb43aab72205353519f,
+        type: 3}
+      propertyPath: borderWidthMaxPercent
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001201781860535928, guid: 678154f06bbc4fb43aab72205353519f,
+        type: 3}
+      propertyPath: borderWidthMinPercent
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001201781860535928, guid: 678154f06bbc4fb43aab72205353519f,
+        type: 3}
+      propertyPath: borderHeightMaxPercent
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001201781860535928, guid: 678154f06bbc4fb43aab72205353519f,
+        type: 3}
+      propertyPath: borderHeightMinPercent
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001201781860535928, guid: 678154f06bbc4fb43aab72205353519f,
+        type: 3}
+      propertyPath: factorMoveAmplitude
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 678154f06bbc4fb43aab72205353519f, type: 3}

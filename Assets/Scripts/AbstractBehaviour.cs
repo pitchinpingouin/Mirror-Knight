@@ -18,7 +18,7 @@ public class AbstractBehaviour : MonoBehaviour
         protected set;
     }
 
-    public Vector3 lookAtTarget
+    public Vector3 pointerPositionInGame
     {
         get;
         protected set;

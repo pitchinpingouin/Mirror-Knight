@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputManager : AbstractBehaviour
 {
-    [SerializeField] Camera mainCamera;
+    [SerializeField] public Camera mainCamera;
     private Ray cameraRay;
 
     public bool escapeButtonDown
@@ -48,8 +48,8 @@ public class InputManager : AbstractBehaviour
         Plane planeIntersectingWithRay = new Plane(Vector3.up, transform.position);
         if(planeIntersectingWithRay.Raycast(cameraRay, out rayLength))
         {
-            lookAtTarget = cameraRay.GetPoint(rayLength);
-            Debug.DrawLine(mainCamera.transform.position, lookAtTarget, Color.blue);
+            pointerPositionInGame = cameraRay.GetPoint(rayLength);
+            Debug.DrawLine(mainCamera.transform.position, pointerPositionInGame, Color.blue);
         }
 
         horizontalDirection = Input.GetAxisRaw("Horizontal");

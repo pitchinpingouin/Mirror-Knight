@@ -35,7 +35,7 @@ public class EnemyBehaviour : AbstractBehaviour
             }
         }
 
-        lookAtTarget = targetTransform.position;
+        pointerPositionInGame = targetTransform.position;
         horizontalDirection = Mathf.Cos(Time.time);
         forwardDirection = Mathf.Sin(Time.time);
     }

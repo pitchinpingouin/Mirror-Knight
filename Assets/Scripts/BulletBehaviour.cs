@@ -41,8 +41,8 @@ public class BulletBehaviour : AbstractBehaviour
         if (willNOTFollowPlayer)
         {
             ChangeColorToBlue();
-            lookAtTarget = player.transform.position;
-            directionVector = lookAtTarget - this.transform.position;
+            pointerPositionInGame = player.transform.position;
+            directionVector = pointerPositionInGame - this.transform.position;
         }
         else
         {
@@ -55,8 +55,8 @@ public class BulletBehaviour : AbstractBehaviour
     {
         if (!isReflected)
         {
-            lookAtTarget = player.transform.position;
-            directionVector = lookAtTarget - this.transform.position;
+            pointerPositionInGame = player.transform.position;
+            directionVector = pointerPositionInGame - this.transform.position;
             horizontalDirection = directionVector.x;
             forwardDirection = directionVector.z;
         }
@@ -75,7 +75,7 @@ public class BulletBehaviour : AbstractBehaviour
         ChangeColorToBlue();
         StartCoroutine("PewPewParticles");
         directionVector = newDirectionVector;
-        //lookAtTarget = transform.position + directionVector;
+        //pointerPositionInGame = transform.position + directionVector;
         horizontalDirection = directionVector.x;
         forwardDirection = directionVector.z;
     }
