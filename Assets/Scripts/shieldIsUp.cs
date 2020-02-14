@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class shieldIsUp : MonoBehaviour
+public class ShieldIsUp : MonoBehaviour
 {
-   // [SerializeField] private float slowSpeed;
-
-   // private Move moveScript;
     private GameObject shields;
     private InputManager inputManager;
 
@@ -14,22 +11,19 @@ public class shieldIsUp : MonoBehaviour
     void Start()
     {
         shields = transform.Find("shields").gameObject;
-       // moveScript = GetComponent<Move>();
         inputManager = GetComponent<InputManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (inputManager.leftClickDown)
+        if (inputManager.shieldDown)
         {
-      //      moveScript.changeSpeedtoValue(slowSpeed);
             shields.SetActive(true);
         }
 
-        if (inputManager.leftClickUp)
+        if (inputManager.shieldUp)
         {
-       //     moveScript.SetCurrentSpeedToMaxSpeed();
             shields.SetActive(false);
         }
     }

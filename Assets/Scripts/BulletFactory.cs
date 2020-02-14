@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletFactory : MonoBehaviour
 {
     [SerializeField] private GameObject bullet1;
-    [SerializeField] private GameObject bullet2;
+
     private Queue<GameObject> queueBullets;
     [SerializeField] private int nbBulletsInQueue = 15;
 
@@ -16,18 +16,10 @@ public class BulletFactory : MonoBehaviour
         instanceFactory = this;
         queueBullets = new Queue<GameObject>();
         for(int i = 0; i < nbBulletsInQueue; i++)
-        {
-            
+        {  
             GameObject bulletInstantiated = Instantiate(bullet1, null);
             bulletInstantiated.SetActive(false);
             queueBullets.Enqueue(bulletInstantiated);
-            
-
-            /*
-            GameObject bulletInstantiated = Instantiate(bullet2, null);
-            bulletInstantiated.SetActive(false);
-            queueBullets.Enqueue(bulletInstantiated);
-            */
         }
     }
 

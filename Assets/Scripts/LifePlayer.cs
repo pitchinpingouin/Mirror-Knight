@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class LifePlayer : LifeManager
 {
+    public GameObject shields;
+    [SerializeField] private float damageRadius;
+    public Vector3 damagePosition;
+    /*
     [SerializeField] private int slowFlameDamage = 1;
     [SerializeField] private float timeBeforeFlameDamage = 1.0f;
 
@@ -19,26 +23,31 @@ public class LifePlayer : LifeManager
 
     private Light flameLight;
     private GameObject torchGameObject;
-
+    */
     // Update is called once per frame
     override protected void Start()
     {
         base.Start();
+        /*
         deathlight = transform.Find("deathLight").gameObject;
         torch = transform.Find("torch").gameObject;
-        isGoingToDieNextHit = false;
+        
         torchGameObject = transform.Find("torch").gameObject;
         flameLight = torchGameObject.GetComponentInChildren<Light>();
         StartCoroutine("SlowlyKillTheFlame");
+        */
+
+        isGoingToDieNextHit = false;
     }
 
+    /*
     private void Update()
     {
         float percentage = (float)currentHealth / (float)maxHealth;
         flameLight.range = percentage * maxRange + minRange;
         flameLight.intensity = percentage * maxIntensity + minIntensity;
     }
-
+    
 
     IEnumerator SlowlyKillTheFlame()
     {
@@ -48,19 +57,39 @@ public class LifePlayer : LifeManager
             TakeDamage(slowFlameDamage);
         }
     }
+    */
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 
     public override void TakeDamage(int damageOrHeal)
     {
         if (isGoingToDieNextHit)
         {
-            if (damageOrHeal > slowFlameDamage)
-            {
+            //if (damageOrHeal > slowFlameDamage)
+            //{
                 Die();
-            }
+            //}
         }
-
+        else
         {
-            if (currentHealth - damageOrHeal > maxHealth)
+            if(damageOrHeal > 0)
+            {
+                //Loose shields
+                shields.transform.parent = null;
+                //shields.GetComponent<SphereCollider>().enabled = true;
+
+                //Rejects the player and the other bullets with an explosive force.
+                GetComponent<Rigidbody>().AddExplosionForce(damageOrHeal, damagePosition, damageRadius);
+
+                //Make the player vulnerable on next hit.
+                isGoingToDieNextHit = true;
+            }
+            
+
+
+            /*if (currentHealth - damageOrHeal > maxHealth)
             {
                 currentHealth = maxHealth;
             }
@@ -79,7 +108,7 @@ public class LifePlayer : LifeManager
                 deathlight.SetActive(false);
                 isGoingToDieNextHit = false;
             }
+            */
         }
-
     }
 }

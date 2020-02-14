@@ -6,6 +6,7 @@ public class LifeShield : LifeManager
 {
     [SerializeField] private float timeToRepair;
     private float timer;
+    private Light spotlight;
 
     MeshRenderer mRenderer;
     BoxCollider bCollider;
@@ -15,6 +16,7 @@ public class LifeShield : LifeManager
     protected override void Start()
     {
         base.Start();
+        spotlight = GetComponentInChildren<Light>();
         mRenderer = GetComponent<MeshRenderer>();
         bCollider = GetComponent<BoxCollider>();
     }
@@ -35,6 +37,7 @@ public class LifeShield : LifeManager
 
         bCollider.enabled = true;
         mRenderer.enabled = true;
+        spotlight.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -42,6 +45,7 @@ public class LifeShield : LifeManager
     {
         mRenderer.enabled = false;
         bCollider.enabled = false;
+        spotlight.gameObject.SetActive(false);
         StartCoroutine("WaitBeforeRepair");
     }
 }

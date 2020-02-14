@@ -124,6 +124,7 @@ public class BulletBehaviour : AbstractBehaviour
 
         if (other.CompareTag("Player"))
         {
+            other.GetComponent<LifePlayer>().damagePosition = transform.position;
             other.GetComponent<LifeManager>().TakeDamage(damage);
             QueueBullet();
         }

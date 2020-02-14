@@ -9,6 +9,7 @@ public class ShieldReflect : MonoBehaviour
 
     private Move moveScript;
     private LifeManager lifeShieldScript;
+    [SerializeField] private float limitAngleToReflect;
 
     private void Start()
     {
@@ -20,13 +21,25 @@ public class ShieldReflect : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
-            //Shield reflects bullets in its facing direction.
-            other.GetComponent<BulletBehaviour>().IsReflected(this.transform.forward); 
+            //If the projectile doesn't come from behind, reflect it.
+            if(Vector3.Angle(other.transform.position - transform.position, transform.forward) < limitAngleToReflect)
+            {
+                //Shield reflects bullets in its facing direction.
+                other.GetComponent<BulletBehaviour>().IsReflected(transform.forward);
+            }
+            else
+            {
+                other.GetComponent<BulletBehaviour>().QueueBullet();
+            }
             
-            //TODO: use events
-            moveScript.StopCoroutine("getSlowedThenReturnsMax");
-            moveScript.StartCoroutine("getSlowedThenReturnsMax");
-
+            //TODO: use events. If the player holds the shields, then slow him.
+            if(transform.parent.parent != null)
+            {
+                moveScript.StopCoroutine("getSlowedThenReturnsMax");
+                moveScript.StartCoroutine("getSlowedThenReturnsMax");
+            }
+            
+            //The shield takes damage.
             lifeShieldScript.TakeDamage(other.GetComponent<BulletBehaviour>().damage);
         }
     }

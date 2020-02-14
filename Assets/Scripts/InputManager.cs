@@ -13,13 +13,25 @@ public class InputManager : AbstractBehaviour
         private set;
     }
 
-    public bool leftClickDown
+    public bool shieldDown
     {
         get;
         private set;
     }
 
-    public bool leftClickUp
+    public bool shieldUp
+    {
+        get;
+        private set;
+    }
+
+    public bool shardDown
+    {
+        get;
+        private set;
+    }
+
+    public bool shardUp
     {
         get;
         private set;
@@ -55,8 +67,12 @@ public class InputManager : AbstractBehaviour
         horizontalDirection = Input.GetAxisRaw("Horizontal");
         forwardDirection = Input.GetAxisRaw("Vertical");
 
-        leftClickDown = Input.GetButtonDown("shieldUp");
-        leftClickUp = Input.GetButtonUp("shieldUp");
+        shardDown = Input.GetButtonDown("shard");
+        shardUp = Input.GetButtonUp("shard");
+
+        shieldDown = Input.GetButtonDown("shieldUp");
+        shieldUp = Input.GetButtonUp("shieldUp");
+        
         escapeButtonDown = Input.GetButtonDown("Exit");
 
 
