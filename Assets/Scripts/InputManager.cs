@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputManager : AbstractBehaviour
 {
-    [SerializeField] public Camera mainCamera;
+    public Camera mainCamera;
     private Ray cameraRay;
 
     public bool escapeButtonDown
@@ -43,13 +43,6 @@ public class InputManager : AbstractBehaviour
         private set;
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -67,11 +60,11 @@ public class InputManager : AbstractBehaviour
         horizontalDirection = Input.GetAxisRaw("Horizontal");
         forwardDirection = Input.GetAxisRaw("Vertical");
 
-        shardDown = Input.GetButtonDown("shard");
-        shardUp = Input.GetButtonUp("shard");
+        shardDown = Input.GetButtonDown("ThrowLight");
+        shardUp = Input.GetButtonUp("ThrowLight");
 
-        shieldDown = Input.GetButtonDown("shieldUp");
-        shieldUp = Input.GetButtonUp("shieldUp");
+        shieldDown = Input.GetButtonDown("GrabShield");
+        shieldUp = Input.GetButtonUp("GrabShield");
         
         escapeButtonDown = Input.GetButtonDown("Exit");
 

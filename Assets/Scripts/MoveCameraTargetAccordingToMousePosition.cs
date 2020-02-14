@@ -145,9 +145,12 @@ public class MoveCameraTargetAccordingToMousePosition : MonoBehaviour
                     ) * factorMoveAmplitude
                 );
             }
-
-            //Here, the mouse is outside the biggest ellipse. The cameraTarget z-localPosition is maxed.
             else
+            //Here, the mouse is outside the biggest ellipse. The cameraTarget z-localPosition is maxed.
+
+            if (((inputManager.mousePositionOnScreen.x - centerOfScreen.x) / (aMax)) * ((inputManager.mousePositionOnScreen.x - centerOfScreen.x) / (aMax))
+            + ((inputManager.mousePositionOnScreen.y - centerOfScreen.y) / (bMax)) * ((inputManager.mousePositionOnScreen.y - centerOfScreen.y) / (bMax))
+            >= 1)
             {
                 cameraTargetTransform.localPosition = new Vector3(
                     cameraTargetTransform.localPosition.x,

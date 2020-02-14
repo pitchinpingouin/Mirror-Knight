@@ -15,6 +15,10 @@ public class BulletBehaviour : AbstractBehaviour
     }
     public Vector3 directionVector;
 
+    public Color RedEmission;
+    public Color BlueEmission;
+
+
     private GameObject psGameObject;
 
     private ParticleSystem ps;
@@ -75,7 +79,7 @@ public class BulletBehaviour : AbstractBehaviour
         ChangeColorToBlue();
         StartCoroutine("PewPewParticles");
         directionVector = newDirectionVector;
-        //pointerPositionInGame = transform.position + directionVector;
+        pointerPositionInGame = transform.position + 1000 * directionVector;
         horizontalDirection = directionVector.x;
         forwardDirection = directionVector.z;
     }
@@ -88,16 +92,14 @@ public class BulletBehaviour : AbstractBehaviour
 
     void ChangeColorToBlue()
     {
-        lightComponent.color = Color.blue;
-        mRenderer.material.SetColor("_EmissionColor", Color.blue);
-        mRenderer.material.color = Color.blue;
+        mRenderer.material.SetColor("_EmissionColor", BlueEmission);
+        mRenderer.material.SetColor("_Color", Color.blue);
     }
 
     void ChangeColorToRed()
     {
-        lightComponent.color = Color.red;
-        mRenderer.material.SetColor("_EmissionColor", Color.red);
-        mRenderer.material.color = Color.red;
+        mRenderer.material.SetColor("_EmissionColor", RedEmission);
+        mRenderer.material.SetColor("_Color", Color.red);
     }
 
     private void BulletTooFarFromPlayer()

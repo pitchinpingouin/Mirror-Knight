@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class LifeEnemy : LifeManager
 {
-
+    protected override void Die()
+    {
+        currentHealth = maxHealth;
+    }
 }

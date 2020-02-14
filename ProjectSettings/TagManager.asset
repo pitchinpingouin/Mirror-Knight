@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Bonefire
   - Ground
+  - Shields
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - shield
   - bullet
   - pickup
-  - 
+  - player
   - 
   - 
   - 
