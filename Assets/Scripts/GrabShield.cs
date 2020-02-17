@@ -36,14 +36,12 @@ public class GrabShield : MonoBehaviour
             else 
             if(alreadyHasShield)
             {
-
                 alreadyHasShield = false;
                 
                 shields.transform.parent = null;
 
                 shields.GetComponent<SphereCollider>().enabled = true;
                 canGrabShield = true;
-
             }
         }
     }

@@ -20,7 +20,7 @@ public class ThrowShard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inputManager.shardDown)
+        if (inputManager.lightDown)
         {
             shard.SetActive(false);
             shard.transform.position = spawnTransform.position;

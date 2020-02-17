@@ -25,13 +25,37 @@ public class InputManager : AbstractBehaviour
         private set;
     }
 
-    public bool shardDown
+    public bool dashDown
     {
         get;
         private set;
     }
 
-    public bool shardUp
+    public bool dashUp
+    {
+        get;
+        private set;
+    }
+
+    public bool burstDown
+    {
+        get;
+        private set;
+    }
+
+    public bool burstUp
+    {
+        get;
+        private set;
+    }
+
+    public bool lightDown
+    {
+        get;
+        private set;
+    }
+
+    public bool lightUp
     {
         get;
         private set;
@@ -60,8 +84,14 @@ public class InputManager : AbstractBehaviour
         horizontalDirection = Input.GetAxisRaw("Horizontal");
         forwardDirection = Input.GetAxisRaw("Vertical");
 
-        shardDown = Input.GetButtonDown("ThrowLight");
-        shardUp = Input.GetButtonUp("ThrowLight");
+        lightDown = Input.GetButtonDown("ThrowLight");
+        lightUp = Input.GetButtonUp("ThrowLight");
+
+        dashUp = Input.GetButtonUp("Dash");
+        dashDown = Input.GetButtonDown("Dash");
+
+        burstUp = Input.GetButtonUp("Burst");
+        burstDown = Input.GetButtonDown("Burst");
 
         shieldDown = Input.GetButtonDown("GrabShield");
         shieldUp = Input.GetButtonUp("GrabShield");

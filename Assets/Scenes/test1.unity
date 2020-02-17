@@ -603,7 +603,7 @@ PrefabInstance:
     - target: {fileID: 1768317090761551258, guid: 202267dcd5214954eaea8f046c8ac43f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6341848
+      value: -5.19
       objectReference: {fileID: 0}
     - target: {fileID: 1768317090761551258, guid: 202267dcd5214954eaea8f046c8ac43f,
         type: 3}
@@ -654,6 +654,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 46.768223
+      objectReference: {fileID: 0}
+    - target: {fileID: 1768317090761551258, guid: 202267dcd5214954eaea8f046c8ac43f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.68
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 202267dcd5214954eaea8f046c8ac43f, type: 3}
@@ -965,11 +970,6 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 544872020}
-    - target: {fileID: 5001201781860535928, guid: 678154f06bbc4fb43aab72205353519f,
-        type: 3}
-      propertyPath: borderWidthMaxPercent
-      value: 1.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 678154f06bbc4fb43aab72205353519f, type: 3}
 --- !u!1001 &5674266325653464985
@@ -1300,11 +1300,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8556458366963854945, guid: 8827bf2954af4004d812be3e01943585,
-        type: 3}
-      propertyPath: fireRate
-      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8827bf2954af4004d812be3e01943585, type: 3}

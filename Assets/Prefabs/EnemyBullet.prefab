@@ -5035,6 +5035,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 8
   slowSpeed: 0.5
+  slowRecoverFactor: 100
 --- !u!114 &6232323586522446167
 MonoBehaviour:
   m_ObjectHideFlags: 0

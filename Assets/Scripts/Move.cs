@@ -4,48 +4,56 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    private AbstractBehaviour behaviour;
-    [SerializeField] private float maxSpeed;
+    protected AbstractBehaviour behaviour;
+    [SerializeField] protected float maxSpeed;
     [SerializeField] private float slowSpeed;
-    private float currentSpeed;
+    [SerializeField] private float slowRecoverFactor;
+    protected float currentSpeed;
 
-    private Vector3 direction;
-    // Start is called before the first frame update
-    void ComputeDirection()
+    //Needed to restore previous state, after a dash or a slow for example.
+    protected float previousSpeed;
+
+    protected Vector3 direction;
+
+    protected virtual void ComputeDirection()
     {
         direction = Vector3.forward * behaviour.forwardDirection + Vector3.right * behaviour.horizontalDirection;
         direction.Normalize();
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         SetCurrentSpeedToMaxSpeed();
         behaviour = GetComponent<AbstractBehaviour>();
     }
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         ComputeDirection();
         transform.position += direction * currentSpeed * Time.deltaTime;
     }
 
-    public void changeSpeedtoValue(float speedValue)
+    public void SetSpeedtoValue(float speedValue)
     {
+        previousSpeed = currentSpeed;
         currentSpeed = speedValue;
     }
 
     public void SetCurrentSpeedToMaxSpeed()
     {
+        previousSpeed = currentSpeed;
         currentSpeed = maxSpeed;
     }
 
-    public IEnumerator getSlowedThenReturnsMax()
+    public IEnumerator getSlowedThenReturnsToPrevious()
     {
+        //TODO: remember last state, then restore it.
+        
         float timer = 0.0f;
         while (timer <= 1.0f)
         {
             currentSpeed = Mathf.SmoothStep(slowSpeed, maxSpeed, timer);
-            timer += 2 * Time.deltaTime;
+            timer += slowRecoverFactor * Time.deltaTime;
             yield return null;
         }
     }

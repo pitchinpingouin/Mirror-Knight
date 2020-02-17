@@ -36,7 +36,7 @@ public class ShieldReflect : MonoBehaviour
             if(transform.parent.parent != null)
             {
                 moveScript.StopCoroutine("getSlowedThenReturnsMax");
-                moveScript.StartCoroutine("getSlowedThenReturnsMax");
+                moveScript.StartCoroutine("getSlowedThenReturnsToPrevious");
             }
             
             //The shield takes damage.
