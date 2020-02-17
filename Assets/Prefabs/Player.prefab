@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 600502125}
   - component: {fileID: 600502124}
   - component: {fileID: 600502129}
+  - component: {fileID: 5001201781548527503}
   m_Layer: 8
   m_Name: shieldRight
   m_TagString: Untagged
@@ -176,6 +177,22 @@ MonoBehaviour:
   c_zeroHealth: {r: 1, g: 0, b: 0, a: 0.627451}
   e_fullHealth: {r: 0, g: 0.53527784, b: 1, a: 0.11764706}
   e_zeroHealth: {r: 1, g: 0, b: 0, a: 0.05882353}
+--- !u!114 &5001201781548527503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600502122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89457df7642727e488d25c52b65e2395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burst: {fileID: 0}
+  burstDistance: 8
+  burstDuration: 4
+  burstCooldown: 6
 --- !u!1 &1005266078
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +299,7 @@ GameObject:
   - component: {fileID: 1658814497}
   - component: {fileID: 1658814496}
   - component: {fileID: 1658814501}
+  - component: {fileID: 5001201781548527502}
   m_Layer: 8
   m_Name: shieldCenter
   m_TagString: Untagged
@@ -413,6 +431,22 @@ MonoBehaviour:
   c_zeroHealth: {r: 1, g: 0, b: 0, a: 0.627451}
   e_fullHealth: {r: 0, g: 0.53527784, b: 1, a: 0.11764706}
   e_zeroHealth: {r: 1, g: 0, b: 0, a: 0.05882353}
+--- !u!114 &5001201781548527502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658814494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89457df7642727e488d25c52b65e2395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burst: {fileID: 0}
+  burstDistance: 10
+  burstDuration: 4
+  burstCooldown: 6
 --- !u!1 &2137036020
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,6 +462,7 @@ GameObject:
   - component: {fileID: 2137036023}
   - component: {fileID: 2137036022}
   - component: {fileID: 2137036027}
+  - component: {fileID: 5001201781548527504}
   m_Layer: 8
   m_Name: shieldLeft
   m_TagString: Untagged
@@ -559,6 +594,22 @@ MonoBehaviour:
   c_zeroHealth: {r: 1, g: 0, b: 0, a: 0.627451}
   e_fullHealth: {r: 0, g: 0.53527784, b: 1, a: 0.11764706}
   e_zeroHealth: {r: 1, g: 0, b: 0, a: 0.05882353}
+--- !u!114 &5001201781548527504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137036020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89457df7642727e488d25c52b65e2395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burst: {fileID: 0}
+  burstDistance: 8
+  burstDuration: 4
+  burstCooldown: 6
 --- !u!1 &5001201780675082486
 GameObject:
   m_ObjectHideFlags: 0

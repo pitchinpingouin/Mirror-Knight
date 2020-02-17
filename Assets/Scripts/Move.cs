@@ -39,6 +39,12 @@ public class Move : MonoBehaviour
         currentSpeed = speedValue;
     }
 
+    public void SetCurrentSpeedToSlowSpeed()
+    {
+        previousSpeed = currentSpeed;
+        currentSpeed = slowSpeed;
+    }
+
     public void SetCurrentSpeedToMaxSpeed()
     {
         previousSpeed = currentSpeed;
